@@ -19,7 +19,7 @@ export const Modal: FC<ModalProps> = ({
 }) => {
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const [isMounted, setIsMounted] = useState<boolean>(false);
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     useEffect(() => {
         if (isOpen) {
@@ -30,7 +30,7 @@ export const Modal: FC<ModalProps> = ({
     const closeHandler = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
-            timeRef.current = setTimeout(() => {
+            timerRef.current = setTimeout(() => {
                 onClose();
                 setIsClosing(false);
             }, ANIMATION_DELAY);
@@ -55,7 +55,7 @@ export const Modal: FC<ModalProps> = ({
         }
 
         return () => {
-            clearTimeout(timeRef.current);
+            clearTimeout(timerRef.current);
         };
     }, [isOpen, onKeyDown]);
 

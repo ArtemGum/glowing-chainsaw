@@ -1,4 +1,5 @@
 {
+  "SignUp": "SignUp",
   "Vvedite parol": "Vvedite parol",
   "Vvedite username": "Vvedite username",
   "decrement": "decrement",
@@ -6,6 +7,7 @@
   "throw error": "throw error",
   "toggle": "toggle",
   "Войти": "Войти",
+  "Выйти": "Выйти",
   "Главная": "Главная",
   "Главная страница": "",
   "О нас": "О нас",
