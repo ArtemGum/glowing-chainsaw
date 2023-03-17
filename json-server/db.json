@@ -11,5 +11,14 @@
   "users": [
     {"id":  "1", "username":  "admin", "password": "123"}
   ],
-  "profile": {"name":  "typicode"}
+  "profile": {
+    "first": "Artem",
+    "lastname": "Gumarov",
+    "age": 28,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Orenburg",
+    "username": "admin",
+    "avatar": "https://habrastorage.org/getpro/moikrug/uploads/user/100/047/597/4/avatar/medium_bc0eeca833615decd6bb836d2df41f97.jpg"
+  }
 }
