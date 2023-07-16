@@ -1,24 +1,48 @@
 {
   "posts": [
-    {"id":  "1", "title": "json-server", "author":  "typicode"},
-    {"id":  "2", "title": "json-server 1", "author":  "typicode"},
-    {"id":  "3", "title": "json-server 2", "author":  "typicode"},
-    {"id":  "4", "title": "json-server 3", "author":  "typicode"}
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server 1",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server 2",
+      "author": "typicode"
+    },
+    {
+      "id": "4",
+      "title": "json-server 3",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    {"id":  "1", "body":  "some comment", "postId":  "1"}
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
   ],
   "users": [
-    {"id":  "1", "username":  "admin", "password": "123"}
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
   ],
   "profile": {
     "first": "Artem",
     "lastname": "Gumarov",
-    "age": 28,
-    "currency": "RUB",
-    "country": "Russia",
     "city": "Orenburg",
+    "age": 28,
     "username": "admin",
-    "avatar": "https://habrastorage.org/getpro/moikrug/uploads/user/100/047/597/4/avatar/medium_bc0eeca833615decd6bb836d2df41f97.jpg"
+    "avatar": "https://as2.ftcdn.net/v2/jpg/05/50/95/87/1000_F_550958748_OeGcRonEUNoVhd0wjd9zSEMhLFIGO9Bt.jpg",
+    "currency": "RUB",
+    "country": "Russia"
   }
 }
