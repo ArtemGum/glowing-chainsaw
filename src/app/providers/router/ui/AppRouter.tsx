@@ -8,27 +8,30 @@ import { getUserAuthData } from 'entities/User';
 const AppRouter = () => {
     const isAuth = useSelector(getUserAuthData);
 
-    const routes = useMemo(() => Object.values(routeConfig).filter(({ authOnly }) => authOnly && !isAuth), [isAuth]);
+    const routes = useMemo(() => Object.values(routeConfig).filter((route) => {
+        if (route.authOnly && !isAuth) {
+            return false;
+        }
+
+        return true;
+    }), [isAuth]);
 
     return (
-        <Suspense fallback={<div><PageLoader /></div>}>
-            <Routes>
-                {routes.map(({
-                    element,
-                    ...routeProps
-                }) => (
-                    <Route
-                        key={routeProps.path}
-                        {...routeProps}
-                        element={(
+        <Routes>
+            {routes.map(({ element, path }) => (
+                <Route
+                    key={path}
+                    path={path}
+                    element={(
+                        <Suspense fallback={<PageLoader />}>
                             <div className="page-wrapper">
                                 {element}
                             </div>
-                        )}
-                    />
-                ))}
-            </Routes>
-        </Suspense>
+                        </Suspense>
+                    )}
+                />
+            ))}
+        </Routes>
     );
 };
 
