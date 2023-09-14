@@ -35,15 +35,15 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
 
-    const onChangeUsername = useCallback((value) => {
-        dispatch((loginActions.setUsername(value)));
+    const onChangeUsername = useCallback((value: string) => {
+        dispatch(loginActions.setUsername(value));
     }, [dispatch]);
 
-    const onChangePassword = useCallback((value) => {
-        dispatch((loginActions.setPassword(value)));
+    const onChangePassword = useCallback((value: string) => {
+        dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLoginCLick = useCallback(async () => {
+    const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
@@ -69,10 +69,10 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     placeholder={t('Vvedite parol')}
                 />
                 <Button
-                    disabled={isLoading}
-                    onClick={onLoginCLick}
                     theme={ButtonTheme.OUTLINE}
                     className={cls.loginBtn}
+                    onClick={onLoginClick}
+                    disabled={isLoading}
                 >
                     {t('Войти')}
                 </Button>
