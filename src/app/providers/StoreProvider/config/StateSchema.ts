@@ -5,6 +5,7 @@ import {
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entities/Profile';
+import { ArticleDetailsSchema } from 'entities/Article';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 
@@ -12,6 +13,7 @@ export interface StateSchema {
     user: UserSchema
     loginForm?: LoginSchema
     profile?: ProfileSchema
+    articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
